@@ -94,5 +94,79 @@ print("Sets Practice")
 # item_popped = fruits.pop()
 # print(item_popped)
 
-# Operations with sets:
+# # Operations with sets:
+# set_a = {1, 2, 3, 4, 5}
+# set_b = {4, 5, 6, 7, 8}
+
+# # Union -> unite them together
+# union_set_func = set_a.union(set_b)
+# union_set_pipe = set_a | set_b
+
+# print(f"union_set_func: {union_set_func}")
+# print(f"union_set_pipe: {union_set_pipe}")
+
+# # Intersection - finds elements common in both sets
+# intersection_set_func = set_a.intersection(set_b)
+# intersection_set_apm = set_a & set_b
+# print(f"intersection_set_func: {intersection_set_func}")
+# print(f"intersection_set_apm: {intersection_set_apm}")
+
+# # Difference - finds the elements that are in first set but not in second
+# diff_set_func = set_a.difference(set_b)
+# diff_set_min = set_a - set_b
+
+# print(f"diff_set_func: {diff_set_func}")
+# print(f"diff_set_min: {diff_set_min}")
+
+# # Symmetric - finds element those that are in either set but both
+# symmetric_set_func = set_a.symmetric_difference(set_b)
+# symmetric_set_carrot = set_a ^ set_b
+
+# print(f"symmetric_set_func: {symmetric_set_func}")
+# print(f"symmetric_set_carrot: {symmetric_set_carrot}")
+
+
+# # indexing and slicing not available in sets
+# numbers = {1, 2, 3, 4, 5}
+# # print(numbers[1]) # not valid - TypeError
+# # print(numbers[::-1]) # not valid - TypeError
+
+# # testing memebership
+# fruits = {"apple", "banana", "pear", "orange", "watermelon", "melon"}
+
+# print("apple" in fruits)
+# print("pear" in fruits)
+# print("bear" in fruits)
+
+
+# print("Find unique elements: ")
+# survey_responses = ["cat", "dog", "fish", "bird", "cat", "cat", "dog", "dog"]
+# print(f"survey responses: {survey_responses}")
+
+# unique_pets = set(survey_responses)
+# print(f"unique pets: {unique_pets}")
+
+# # Finding common things 
+# alice_favorites = ["pizza", "sushi", "tacos", "pasta"]
+# bob_favorites = ["burgers", "sushi", "curry", "pasta"]
+
+# print(f"Alice likes: {alice_favorites}")
+# print(f"Bob likes: {bob_favorites}")
+# print(f"Food they both like: {set(alice_favorites) & set(bob_favorites)}\n")
+
+# print(f"Food they like different: {set(alice_favorites) ^ set(bob_favorites)}\n")
+
+# print(f"Food Bob likes different than Alice: {set(bob_favorites) - set(alice_favorites)}\n")
+
+# print(f"Food Alice likes different than Bob: {set(alice_favorites) - set(bob_favorites)}")
+
+# fruits = {"apple", "banana", "pear", "orange", "watermelon", "melon"}
+# allergic_to = {"apple", "melon"}
+
+# print(f"All Fruits in Fridge: {fruits}")
+# print(f"Allergic To: {allergic_to}")
+# print(f"Fruits To Keep: {fruits - allergic_to}")
+
+
+
 
