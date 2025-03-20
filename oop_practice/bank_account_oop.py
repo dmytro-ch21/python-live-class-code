@@ -1,4 +1,9 @@
 class BankAccount:
+    # This variable is declared outside of any methods
+    # It will be accessible for all objects generated from BankAccount class
+    # To access it we just call the Class.variable
+    transaction_fee = 7.99
+    
     def __init__(self, owner, balance=0):
         self.owner = owner
         self.balance = balance
@@ -28,8 +33,7 @@ class BankAccount:
           
 # ========================= Practice ======================
       
-TRANSACTION_FEE = 2.50      
-         
+       
 alice_account = BankAccount("Alice", 2000)
 alice_account.print_info()
 alice_account.deposit(2000)
@@ -49,14 +53,15 @@ operation_success = alice_account.deposit(5000)
 alice_account.print_info()
 
 if operation_success:
-    print(f"Transaction Fee: ${TRANSACTION_FEE}")
-    alice_account.balance -= TRANSACTION_FEE
+    print(f"Transaction Fee: ${BankAccount.transaction_fee}")
+    alice_account.balance -= BankAccount.transaction_fee
 
 
 
 alice_account.print_info()
 
 alice_account.withdraw(-9000)
+alice_account.print_info()
 alice_account.print_info()
 
 
