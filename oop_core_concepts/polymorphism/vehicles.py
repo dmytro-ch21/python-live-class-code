@@ -21,7 +21,6 @@ how_it_moves(boat)
 how_it_moves(car)  
 how_it_moves(airplane)
 
-
 boat == car
 
 print(boat)
