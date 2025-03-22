@@ -1,16 +1,18 @@
 # all classes inherit from object in python
 from datetime import date
 
+# parent base class
 class Animal:
     
+    # class level variable in base class
     general_property = "Animal"
     
     def __init__(self, name, breed, species):
-        self.name = name
-        self.breed = breed
-        self._species = species
+        self.name = name # public 
+        self.breed = breed # public 
+        self._species = species # protected
         # one property of date 
-        self.__date_recieved = date.today()
+        self.__date_recieved = date.today() # private
                 
     def make_sound(self):
         print("Animal is making a generic sound...")
@@ -24,6 +26,7 @@ class Animal:
         
 
 # we inherit by using () and type at class definition
+# child / derived class inheriting from Animal
 class Dog(Animal):
     # by default the subclass will call the init constructor automatically
     
@@ -34,10 +37,12 @@ class Dog(Animal):
     # in addition you can ovverride things like properties and methods
     general_property = "Dog"
     
+    # override the make sound method
+    # override - means provide different implementation
     def make_sound(self):
         print("Woof!")
         
-
+# Another child class
 class Cat(Animal):
     def __init__(self, name, breed, color):
         # Option 1 - Legacy
@@ -53,6 +58,7 @@ class Cat(Animal):
     def make_sound(self):
         print("Meow...")
         
+    # extend the parent get_info function    
     def get_info(self):
         super().get_info()
         print(f"Color: {self.color}")
