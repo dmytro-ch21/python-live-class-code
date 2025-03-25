@@ -15,7 +15,6 @@ print(doubled_numbers)
 
 
 # Example Two
-
 # The function that will be applied for each word
 def translate_to_spanish(word):
     # have a dictionary with words
@@ -52,4 +51,18 @@ spanish_fruit_translation = list(map(translate_to_spanish, fruits))
 spanish_fruit_translation = list(map(translate_to_spanish, list(map(capitalize, fruits))))
 
 print(spanish_fruit_translation)
+
+# Example Three
+def multiply_visually(num_1, num_2):
+    return f"{num_1} * {num_2} = {num_1 * num_2}"
+
+nums_1 = [1, 5, 7, 3, 4]
+nums_2 = [5, 2, 9, 2, 0, 9, 10, 7, 33, 4]
+
+# when we have discrepancy in len() then map will take the shortest
+multiplication_table = list(map(multiply_visually, nums_1, nums_2))
+
+for item in multiplication_table:
+    print(item)
+
 
