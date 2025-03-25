@@ -19,7 +19,7 @@ class User(Person):
     pass
 
 class Guest(Person):
-    pass    
+    pass
     
 bob = Person("Bob", "Smith", "15-09-1980", "123-321-1231")
 print(bob)
