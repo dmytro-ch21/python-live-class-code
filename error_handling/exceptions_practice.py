@@ -2,7 +2,7 @@
 # print("Hello World"
 # print("Hello"."world")
 
-# 
+#
 # input_1 = input("Enter one input")
 # input_2 = input("Enter another input")
 
@@ -18,7 +18,7 @@
 # try:
 #     print(f"The division of {num1} / {num2} is {num1 / num2}")
 # except:
-#     print("Division by 0 not possible. Please provide a non 0 number...")    
+#     print("Division by 0 not possible. Please provide a non 0 number...")
 
 # print("Proceeding with execution...")
 # try:
@@ -26,28 +26,28 @@
 #     result = 100 / number # potential problem
 #     print(f"{number} / 100 = {result}")
 # except ValueError:
-#     print("Input Error! Not Good :(")    
+#     print("Input Error! Not Good :(")
 # except ZeroDivisionError:
-#     print("Division by 0 not possible!")       
-    
-# print("Program Resumes....")   
+#     print("Division by 0 not possible!")
+
+# print("Program Resumes....")
 
 # try:
 #     number = int(input("Enter a number:\n")) # potential problem
 #     result = 100 / number # potential problem
 #     print(f"{number} / 100 = {result}")
 # except (ValueError, ZeroDivisionError):
-#     print("Input Error! Not Good :(")   
-    
-# print("Program Resumes....")     
+#     print("Input Error! Not Good :(")
+
+# print("Program Resumes....")
 
 # try:
 #     result = 100 / 0 # potential problem
 # except ZeroDivisionError as e:
 #     print("Input Error! Not Good :(")
 #     print(f"Error message: {str(e)}")
-#     print(f"Error: {type(e).__name__}")   
-    
+#     print(f"Error: {type(e).__name__}")
+
 # print("Program Resumes....")
 
 # def get_number() -> int:
@@ -61,9 +61,9 @@
 #         return number
 #     finally:
 #         print("Function execution completed! All clean ups completed!")
-            
-            
-# get_number()            
+
+
+# get_number()
 
 # def calculate_average(numbers):
 #     if not numbers:
@@ -80,7 +80,7 @@
 #     raise # Rerasing is when you want to provide handling of an error partially
 # else:
 #     print(f"Average: {result}")
-    
+
 # class InsufficientFundsError(Exception):
 #     pass
 
@@ -93,35 +93,69 @@
 #     result = withdraw(1000, 2000)
 # except InsufficientFundsError:
 #     print("Not enought money!")
-    
+
 # print(f"Money Left: ${result}")
 
 # try:
 #     result = withdraw(1000, 500)
 # except InsufficientFundsError:
 #     print("Not enought money!")
-    
-# print(f"Money Left: ${result}")  
 
-class ConnectionError(Exception):
-    """Raisen when unable to connect to a database"""
-    def __init__(self, host, port, message=False):
-        self.host = host
-        self.port = port
-        if not message:
-            message = f"Failed to connect to the database with url: {self.host}:{self.port}"
-        super().__init__(message)   
+# print(f"Money Left: ${result}")
 
-def connect_to_db(connection):
-    if connection:
-        print("Access DB and retrieve data...")
-        return True
-    else:
-        raise ConnectionError("81.978.836", "8080", "Lol😂")
-  
-  
-  
-try:    
-    connect_to_db(False)    
-except:
-    print("Error captured but not handled properly! Dont ever suppress the error as right here!!!")    
+# class ConnectionError(Exception):
+#     """Raisen when unable to connect to a database"""
+#     def __init__(self, host, port, message=False):
+#         self.host = host
+#         self.port = port
+#         if not message:
+#             message = f"Failed to connect to the database with url: {self.host}:{self.port}"
+#         super().__init__(message)
+
+# def connect_to_db(connection):
+#     if connection:
+#         print("Access DB and retrieve data...")
+#         return True
+#     else:
+#         raise ConnectionError("81.978.836", "8080", "Lol😂")
+
+
+# try:
+#     connect_to_db(False)
+# except:
+#     print("Error captured but not handled properly! Dont ever suppress the error as right here!!!")
+
+
+# API Requests
+# Status code and meesages
+
+# class APIError(Exception):
+#     def __init__(self, message, status_code, endpoint, params):
+#         super().__init__(message)
+#         self.status_code = status_code
+#         self.endpoint = endpoint
+#         self.params = params
+#         self.message = message
+
+#     def __str__(self):
+#         return f"{self.message}, Status Code: {self.status_code}, Endpoint: {self.endpoint} Parameters: {self.params}"
+
+
+# def fake_api_request(endpoint, params, result=False):
+#     if result:
+#         response = {
+#             "data": {"id": 1001},
+#             "status": 200
+#         }
+#         return response
+#     else:
+#         raise APIError("Something went wrong with API request!",
+#                        404, endpoint, params)
+
+
+# try:
+#     resp = fake_api_request('/api/v2/users', 'test', False)
+#     print(resp)
+# except APIError as e:
+#     print(e)
+#     print(f"Status Code: {e.status_code}")
